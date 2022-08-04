@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainController"> <!-- dont forget to set controller -->
+   <children>
+      <AnchorPane onMousePressed="#moveWindow" prefHeight="25.0" prefWidth="900.0" style="-fx-background-color: derive(#1d1d1d,20%);">
+         <children>
+            <Label layoutX="58.0" layoutY="2.0" style="-fx-border-color: transparent;" text="Inventory Management System - Jacob Dyke" />
+            <Circle fill="#f2142e" layoutX="886.0" layoutY="14.0" onMouseClicked="#close" radius="7.0" stroke="#680a1780" strokeType="INSIDE" />
+            <Circle fill="#ecf016" layoutX="856.0" layoutY="14.0" onMouseClicked="#mini" radius="7.0" stroke="#77790c80" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="83.0" prefHeight="340.0" prefWidth="454.0">
+         <children>
+            <Button layoutX="18.0" layoutY="277.0" mnemonicParsing="false" onAction="#addPartView" text="Add" />
+            <Button fx:id="modify" layoutX="111.0" layoutY="277.0" mnemonicParsing="false" onAction="#modifyPartView" text="Modify" />
+            <Button layoutX="319.0" layoutY="277.0" mnemonicParsing="false" onAction="#deletePart" text="Delete" />
+            <TableView fx:id="partsTable" layoutX="14.0" layoutY="64.0" prefHeight="200.0" prefWidth="389.0">
+              <columns>
+                <TableColumn fx:id="partIDCol" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="partNameCol" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="partInventoryLevelCol" prefWidth="110.0" text="Inventory Level" />
+                  <TableColumn fx:id="partCostPerUnitCol" prefWidth="128.0" text="Price/Cost Per Unit" />
+              </columns>
+            </TableView>
+            <Label layoutX="20.0" layoutY="39.0" text="Parts">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="partSearch" layoutX="237.0" layoutY="31.0" onKeyTyped="#partSearch" prefHeight="25.0" prefWidth="166.0" promptText="Search by Part ID or Name" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="468.0" layoutY="83.0" prefHeight="340.0" prefWidth="454.0">
+         <children>
+            <Button layoutX="18.0" layoutY="277.0" mnemonicParsing="false" onAction="#addProductView" text="Add" />
+            <Button layoutX="107.0" layoutY="277.0" mnemonicParsing="false" onAction="#modifyProductView" text="Modify" />
+            <Button layoutX="322.0" layoutY="277.0" mnemonicParsing="false" onAction="#deleteProduct" text="Delete" />
+            <TableView fx:id="productsTable" layoutX="14.0" layoutY="64.0" prefHeight="200.0" prefWidth="389.0">
+               <columns>
+                  <TableColumn fx:id="productIDCol" prefWidth="75.0" text="Product ID" />
+                  <TableColumn fx:id="productNameCol" prefWidth="75.0" text="Product Name" />
+                  <TableColumn fx:id="prodInventoryLevelCol" prefWidth="110.0" text="Inventory Level" />
+                  <TableColumn fx:id="prodCostPerUnitCol" prefWidth="128.0" text="Price/Cost Per Unit" />
+               </columns>
+            </TableView>
+            <Label layoutX="18.0" layoutY="39.0" text="Products">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="productSearch" layoutX="237.0" layoutY="31.0" onKeyTyped="#productSearch" prefHeight="25.0" prefWidth="166.0" promptText="Search by Product ID or Name" />
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#6d68ed00" height="58.0" layoutX="18.0" layoutY="535.0" stroke="#6962ee" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="856.0" />
+      <Label fx:id="errorFeed" layoutX="71.0" layoutY="548.0" style="-fx-border-color: transparent;" text="Action feedback will be provided here." />
+      <Circle fx:id="status" fill="#2ba40f" layoutX="55.0" layoutY="560.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" />
+      <Line endX="-100.0" endY="516.0" fill="#6962ee" layoutX="550.0" layoutY="17.0" startX="-99.5" startY="9.5" stroke="#645dee" />
+      <Line endX="-100.0" endY="438.0" fill="#6962ee" layoutX="101.0" layoutY="-412.0" startX="799.0" startY="438.0" stroke="#645dee" />
+      <AnchorPane layoutX="0.0" onMousePressed="#moveWindow">
+         <children>
+            <ImageView fx:id="icon" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
