@@ -1,1 +1,1 @@
-# This application schedules customers to appointment windows.  The project utlizes Scene Builder, the JDBC driver with MySQL.
+# A scheduling application with a custom GUI, which handles time zones effectively utilizing Java, CSS, JDBC, and Scene Builder. This application uses a local SQL database to store appointments and customer information.
